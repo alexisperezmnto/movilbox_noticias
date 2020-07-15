@@ -152,7 +152,7 @@
       </div>
       <div class="modal-body">
         <div class="card">
-            <form role="form" method="post" class="formUsuario" enctype="multipart/form-data">
+            <form role="form" method="post" class="formRegistrarUsuario" enctype="multipart/form-data">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="nombre">Nombre</label>

@@ -32,7 +32,7 @@ $('.nuevaFoto').change(function() {
 })
 
 //GUARDAR USUARIO
-$('.formUsuario').on('submit', function(e) {
+$('.formRegistrarUsuario').on('submit', function(e) {
 	e.preventDefault();
 	$.ajax({
 		url: "ajax/guardarUsuario.ajax.php",
@@ -88,7 +88,7 @@ $('#modalNuevoUsuario').on('hidden.bs.modal', function(e)
 
 
 //MOSTRAR NOTICIAS
-var tablaUsuarios = $('.tablaPaginaNoticias').DataTable({
+var tablaPaginaNoticias = $('.tablaPaginaNoticias').DataTable({
     "ajax": "ajax/datatable-pagina-noticias.ajax.php",
     "deferRender": true,
     "retrieve": true,
@@ -97,6 +97,13 @@ var tablaUsuarios = $('.tablaPaginaNoticias').DataTable({
     "bLengthChange": false,
     "order": [[ 1, "desc" ]],
     "pageLength": 5,
+    "columnDefs": [
+        {
+            "targets": [ 1 ],
+            "visible": false,
+            "searchable": true
+        }
+    ],
     "language": {
 
       "sProcessing":     "Procesando...",
