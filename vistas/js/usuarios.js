@@ -331,7 +331,7 @@ $(document).on('click','.btnEliminarUsuario', function(){
 	datos.append('usuario', usuario);
 
 	swal.fire({
-		text: '¿Está seguro de eliminar el usuario?',
+		text: '¿Está seguro de eliminar el usuario? También se eliminarán sus noticias.',
 		icon: 'warning',
 		showCancelButton: true,
 		confirmButtonColor: '#3085d6',

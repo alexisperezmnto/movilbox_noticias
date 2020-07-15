@@ -80,6 +80,21 @@ class ControladorUsuarios {
 				rmdir('../vistas/img/usuarios/'.$valor3);
 			}
 
+			//Eliminar noticias
+			require_once "noticias.controlador.php";
+			require_once "../modelos/noticias.modelo.php";
+			$item = 'id_usuario';
+			$valor = $valor1;
+			$noticias = ControladorNoticias::ctrMostrarNoticiasUsuario($item, $valor);
+
+			if($noticias) {
+				foreach($noticias as $noticia) {
+					$valor1 = $noticia['id'];
+					$valor2 = $noticia['imagen'];
+					$respuesta = ControladorNoticias::ctrBorrarNoticia($valor1, $valor2);
+				}
+			}
+
 			$respuesta = ModeloUsuarios::mdlBorrarUsuario($tabla, $datos);
 
 			if($respuesta == 'ok') {
